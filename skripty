@@ -64,3 +64,21 @@ __________________________________
 06 maximalni srazky rok = 
 
 MAX(data[srazky])
+
+__________________________________________________
+
+07 podil srazek = 
+
+-- podil srazek v cervnu v ruzyni v danem roce na celkovych srazkach ruzyne v danem roce
+
+-- suma srazek v ruzyni v danem roce v mesici 6
+SUMX(
+    FILTER(data,data[mesic] = 6 && data[lokalita] = "RUZYNE"),
+    data[srazky])
+-- deleno
+/
+-- suma srazek v ruzyni v danem roce
+
+SUMX(
+    FILTER(data,data[lokalita]="RUZYNE"),
+data[srazky])
