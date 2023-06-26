@@ -93,3 +93,11 @@ SUMX(FILTER(data,data[lokalita] = "RUZYNE"),data[srazky])
 /
 -- suma srazek
 SUM(data[srazky])
+
+___________________________________________-
+
+09 prvni datum kdy prselo = 
+-- v danem roce, minimální datum, kdy srážky > 0
+MINX(
+    FILTER(data,data[srazky] >0),
+data[datum])
