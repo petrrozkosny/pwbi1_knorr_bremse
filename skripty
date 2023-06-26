@@ -58,3 +58,9 @@ _______________________________
 
 05 suma srazek mesic 6 = 
 SUMX(FILTER(data,data[mesic] = 6),data[srazky])
+
+__________________________________
+
+06 maximalni srazky rok = 
+
+MAX(data[srazky])
