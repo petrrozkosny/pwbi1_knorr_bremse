@@ -101,3 +101,11 @@ ___________________________________________-
 MINX(
     FILTER(data,data[srazky] >0),
 data[datum])
+
+__________________________________________________________________
+
+10 pocet destivych dnu ruzyne = 
+-- v danem roce, lokalite ruzyne, kdy srazky > 0
+countx(
+    FILTER(data,data[srazky] > 0 && data[lokalita] = "RUZYNE"),
+data[datum])
