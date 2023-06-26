@@ -55,3 +55,6 @@ SUMX(
 data[srazky])
 
 _______________________________
+
+05 suma srazek mesic 6 = 
+SUMX(FILTER(data,data[mesic] = 6),data[srazky])
