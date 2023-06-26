@@ -82,3 +82,14 @@ SUMX(
 SUMX(
     FILTER(data,data[lokalita]="RUZYNE"),
 data[srazky])
+
+___________________________
+
+08 podil ruzyne na srazkach = 
+
+-- suma srazek v danem roce v ruzyni
+SUMX(FILTER(data,data[lokalita] = "RUZYNE"),data[srazky])
+-- deleno
+/
+-- suma srazek
+SUM(data[srazky])
