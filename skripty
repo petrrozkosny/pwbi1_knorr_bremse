@@ -109,3 +109,14 @@ __________________________________________________________________
 countx(
     FILTER(data,data[srazky] > 0 && data[lokalita] = "RUZYNE"),
 data[datum])
+
+____________________________________________________
+
+11 suma srazek porovnani = 
+-- suma srazek v danem mesici a roce vs. suma srazek v danem mesici
+-- a minimalnim roce daneho mesice
+VAR suma_srazek = SUM(data[srazky])
+VAR mesic = SELECTEDVALUE(data[mesic])
+VAR minimalni_rok = MINX(FILTER(ALL(data),data[mesic]=SELECTEDVALUE(data[mesic])),data[rok])
+VAR suma_srazek_min_rok  = SUMX(FILTER(ALL(data),data[mesic]=mesic && data[rok] = minimalni_rok),data[srazky])
+RETURN suma_srazek  - suma_srazek_min_rok
