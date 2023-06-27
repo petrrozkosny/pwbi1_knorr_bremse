@@ -143,3 +143,13 @@ _______________________________________________
  "Vývoj ročních max. teplot v lokalitách: "&
  CONCATENATEX(DISTINCT(data[lokalita]),data[lokalita],", "),
  "Vývoj ročních max. teplot ve všech lokalitách")
+__________________________________________________________________
+
+14 podminene formatovani max teplota = 
+
+-- maximalni teplotu lokalita,rok
+Var max_teplota = max(data[maximalni_teplota])
+VAR max_teplota_lokalita = 
+MAXX(FILTER(ALL(data),data[lokalita] IN VALUES(data[lokalita])),data[maximalni_teplota])
+return
+if(max_teplota = max_teplota_lokalita,"gold")
