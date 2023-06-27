@@ -153,3 +153,11 @@ VAR max_teplota_lokalita =
 MAXX(FILTER(ALL(data),data[lokalita] IN VALUES(data[lokalita])),data[maximalni_teplota])
 return
 if(max_teplota = max_teplota_lokalita,"gold")
+________________________________________
+
+
+16 osa y suma srazek = 
+
+maxx(
+    ALL(data[rok]),
+    CALCULATE(SUM(data[srazky]))) * 1.1
