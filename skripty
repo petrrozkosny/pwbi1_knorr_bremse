@@ -184,5 +184,7 @@ SWITCH(TRUE(),
 max(data[maximalni_teplota]) = _minimalni_maximalni_teplota,"cyan",
 max_teplota=max_teplota_lokalita,"GOLD")
 
+___________________________________
 
+dim_datumy = ADDCOLUMNS(CALENDARAUTO(),"kvartal",QUARTER([Date]))
 
