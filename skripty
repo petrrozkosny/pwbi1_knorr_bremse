@@ -161,3 +161,28 @@ ________________________________________
 maxx(
     ALL(data[rok]),
     CALCULATE(SUM(data[srazky]))) * 1.1
+
+___________________________________________
+
+15 min max teplota = 
+
+-- maximalni teplotu lokalita,rok
+Var max_teplota = max(data[maximalni_teplota])
+VAR max_teplota_lokalita = 
+MAXX(FILTER(ALL(data),data[lokalita] IN VALUES(data[lokalita])),data[maximalni_teplota])
+-- tabulka maximalnich teplot
+VAR _tabulka = 
+ADDCOLUMNS(
+    ALL(data[rok]),
+"maximalni rocni teplota",
+CALCULATE(MAX(data[maximalni_teplota])))
+
+VAR _minimalni_maximalni_teplota = MINX(_tabulka,[maximalni rocni teplota])
+
+return
+SWITCH(TRUE(),
+max(data[maximalni_teplota]) = _minimalni_maximalni_teplota,"cyan",
+max_teplota=max_teplota_lokalita,"GOLD")
+
+
+
