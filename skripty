@@ -120,3 +120,14 @@ VAR mesic = SELECTEDVALUE(data[mesic])
 VAR minimalni_rok = MINX(FILTER(ALL(data),data[mesic]=SELECTEDVALUE(data[mesic])),data[rok])
 VAR suma_srazek_min_rok  = SUMX(FILTER(ALL(data),data[mesic]=mesic && data[rok] = minimalni_rok),data[srazky])
 RETURN suma_srazek  - suma_srazek_min_rok
+
+______________________________________________
+
+12 barva lokality = 
+VAR lokalita = SELECTEDVALUE(data[lokalita])
+VAR zeme = CALCULATE(FIRSTNONBLANK(dim_oblasti[země],TRUE()),FILTER(dim_oblasti,dim_oblasti[stanice] = lokalita))
+return 
+SWITCH(zeme,
+"Rakousko","GOLD",
+"Cesko","TOMATO",
+"Slovensko", "CYAN")
