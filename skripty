@@ -131,3 +131,15 @@ SWITCH(zeme,
 "Rakousko","GOLD",
 "Cesko","TOMATO",
 "Slovensko", "CYAN")
+
+_______________________________________________
+
+13 nazev grafu = 
+ 
+ 
+ SWITCH(TRUE(),
+ HASONEFILTER(data[lokalita]), "Vývoj ročních max. teplot v lokalitě "&SELECTEDVALUE(data[lokalita]),
+ ISFILTERED(data[lokalita]),
+ "Vývoj ročních max. teplot v lokalitách: "&
+ CONCATENATEX(DISTINCT(data[lokalita]),data[lokalita],", "),
+ "Vývoj ročních max. teplot ve všech lokalitách")
