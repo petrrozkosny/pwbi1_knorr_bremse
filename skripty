@@ -188,3 +188,11 @@ ___________________________________
 
 dim_datumy = ADDCOLUMNS(CALENDARAUTO(),"kvartal",QUARTER([Date]))
 
+___________________
+
+17 pocet dnu typ pocasi = 
+
+SWITCH(SELECTEDVALUE(typ_pocasi[typ_pocasi]),
+"prselo",COUNTX(FILTER(data,data[srazky] > 0),data[datum]),
+"neprselo",COUNTX(FILTER(data,data[srazky] = 0),data[datum]))
+
