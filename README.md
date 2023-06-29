@@ -1,3 +1,5 @@
+Práce s doplňkem Powr Pivot v Excel: https://support.microsoft.com/cs-cz/office/z%C3%ADsk%C3%A1n%C3%AD-dat-pomoc%C3%AD-dopl%C5%88ku-power-pivot-f0431904-aab1-49c3-b50c-c6f5d4517a66
+
 # Efektivní analýza dat a reporting
 
 Osnova kurzu: https://www.skoleni-ict.cz/kurz/Power-BI-Efektivni-analyza-dat-a-reporting-PWBI1.aspx
